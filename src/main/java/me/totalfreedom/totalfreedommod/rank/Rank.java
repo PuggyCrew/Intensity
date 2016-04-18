@@ -47,7 +47,7 @@ public enum Rank implements RankBase
         name = tempName.trim();
 
         this.determiner = determiner;
-        this.tag = tag.length() > 0 ? "[" + tag + "]" : "";
+        this.tag = tag.length() > 0 ? ChatColor.DARK_GRAY + "[" + color + tag + ChatColor.DARK_GRAY + "]" : "";
 
         // Colors
         this.color = color;

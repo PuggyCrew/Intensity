@@ -25,19 +25,6 @@ public class Command_bananahammer extends FreedomCommand
         {
             return false;
         }
-        if(!sender.getName().equalsIgnoreCase("Mafrans"))
-        {
-            FUtil.bcastMsg("WARNING: " + sender.getName() + " has attempted to use Mafrans's much personal command.", ChatColor.RED);
-            FUtil.bcastMsg("Mafrans has been notified!", ChatColor.RED);
-            for (Player players : server.getOnlinePlayers())
-            {
-                if(players.getName().equals("Mafrans") || players.getName().equals("janosbananos"))
-                {
-                    msg(ChatColor.RED + sender.getName() + " just tried to use /bananahammer, please rekk them as hard as possible.", ChatColor.BOLD);
-                }
-            }
-            return true;
-        }
         final Player player = getPlayer(args[0]);
 
         if (player == null)
@@ -49,18 +36,18 @@ public class Command_bananahammer extends FreedomCommand
         FUtil.adminAction(sender.getName(), "Bananahammering " + player.getName(), true);
         FUtil.bcastMsg(player.getName() + ", You shouldnt have done this...", ChatColor.RED);
         
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_RED);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.RED);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.GOLD);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.YELLOW);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.GREEN);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_GREEN);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_BLUE);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.BLUE);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_AQUA);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.AQUA);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.LIGHT_PURPLE);
-        FUtil.bcastMsg("Mafrans is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_PURPLE);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_RED);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.RED);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.GOLD);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.YELLOW);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.GREEN);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_GREEN);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_BLUE);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.BLUE);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_AQUA);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.AQUA);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.LIGHT_PURPLE);
+        FUtil.bcastMsg(sender.getName() + " is so fucking mad right now, prepare to get fucked through the roof!", ChatColor.DARK_PURPLE);
         FUtil.adminAction(sender.getName(), "Deopping " + player.getName(),false);
         player.setOp(false);
         player.setGameMode(GameMode.SURVIVAL);
@@ -96,7 +83,7 @@ public class Command_bananahammer extends FreedomCommand
 
         // Ban player
         Ban ban = Ban.forPlayer(player, sender);
-        ban.setReason("&cYOU REGRETTING IT YET?!??");
+        ban.setReason("&cYou regretting it yet?!??");
         for (String playerIp : plugin.pl.getData(player).getIps())
         {
             ban.addIp(playerIp);
@@ -135,7 +122,7 @@ public class Command_bananahammer extends FreedomCommand
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "YOU WILL REGRET YOU MADE MAFRANS MAD!");
+                player.kickPlayer(ChatColor.RED + "You will regret you made " + sender.getName() + " mad!!!");
             }
         }.runTaskLater(plugin, 3L * 20L);
 

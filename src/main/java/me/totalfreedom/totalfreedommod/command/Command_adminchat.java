@@ -1,4 +1,4 @@
-package me.totalfreedom.totalfreedommod.command;
+    package me.totalfreedom.totalfreedommod.command;
 
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.rank.Rank;
