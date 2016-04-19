@@ -188,7 +188,11 @@ public class CageData
                         block.setType(Material.SKULL);
                         final Skull skull = (Skull) block.getState();
                         skull.setSkullType(SkullType.PLAYER);
+<<<<<<< HEAD
                         skull.setOwner(Command_cage.cmdSender);
+=======
+                        skull.setOwner("marcocorriero11");
+>>>>>>> 47f475f9faee833cddbd99a84f9bf3230895d9bb
                         skull.update();
                     }
                 }
