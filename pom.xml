@@ -18,7 +18,7 @@
         <maven.build.timestamp.format>dd/MM/yyyy hh:mm aa</maven.build.timestamp.format>
     </properties>
 
-    <name>TotalFreedomMod</name>
+    <name>MarcoFreedomMod-tfm5</name>
     <description>Server modification for the TotalFreedom server</description>
     <url>https://github.com/TotalFreedom/TotalFreedomMod</url>
 

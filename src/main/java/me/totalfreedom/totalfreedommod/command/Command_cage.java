@@ -15,14 +15,16 @@ import org.bukkit.entity.Player;
 public class Command_cage extends FreedomCommand
 {
 
+    public static String cmdSender;
+
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
+        
         if (args.length == 0)
         {
             return false;
         }
-
         if ("off".equals(args[0]) && sender instanceof Player)
         {
             FUtil.adminAction(sender.getName(), "Uncaging " + sender.getName(), true);
@@ -68,9 +70,16 @@ public class Command_cage extends FreedomCommand
             }
             else
             {
-                if ("darth".equalsIgnoreCase(args[1]))
+                if (outerMaterial == Material.SKULL)
                 {
-                    outerMaterial = Material.SKULL;
+                    if(args.length == 4)
+                    {
+                        cmdSender = args[3];
+                    }
+                    else
+                    {
+                        cmdSender = playerSender.getName();
+                    }
                 }
                 else if (Material.matchMaterial(args[1]) != null)
                 {
@@ -89,6 +98,10 @@ public class Command_cage extends FreedomCommand
             {
                 innerMaterial = Material.STATIONARY_LAVA;
             }
+            else if (args[2].equalsIgnoreCase("air"))
+            {
+                innerMaterial = Material.AIR;
+            }
         }
 
         Location targetPos = player.getLocation().clone().add(0, 1, 0);
@@ -102,7 +115,7 @@ public class Command_cage extends FreedomCommand
         }
         else
         {
-            FUtil.adminAction(sender.getName(), "Caging " + player.getName() + " in PURE_DARTH", true);
+            FUtil.adminAction(sender.getName(), "Caging " + player.getName() + " in " + cmdSender + "_mode", true);
         }
 
         return true;
