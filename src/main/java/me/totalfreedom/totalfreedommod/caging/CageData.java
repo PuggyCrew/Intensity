@@ -3,7 +3,6 @@ package me.totalfreedom.totalfreedommod.caging;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
-import me.totalfreedom.totalfreedommod.command.Command_cage;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -177,7 +176,7 @@ public class CageData
 
                         block.setType(material);
                     }
-                    else // Player mode
+                    else // Darth mode
                     {
                         if (Math.abs(xOffset) == length && Math.abs(yOffset) == length && Math.abs(zOffset) == length)
                         {
@@ -188,11 +187,7 @@ public class CageData
                         block.setType(Material.SKULL);
                         final Skull skull = (Skull) block.getState();
                         skull.setSkullType(SkullType.PLAYER);
-<<<<<<< HEAD
-                        skull.setOwner(Command_cage.cmdSender);
-=======
-                        skull.setOwner("marcocorriero11");
->>>>>>> 47f475f9faee833cddbd99a84f9bf3230895d9bb
+                        skull.setOwner("Prozza");
                         skull.update();
                     }
                 }
