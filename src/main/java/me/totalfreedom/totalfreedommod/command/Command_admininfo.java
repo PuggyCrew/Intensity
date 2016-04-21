@@ -21,7 +21,7 @@ public class Command_admininfo extends FreedomCommand
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        msg(ConfigEntry.SERVER_ADMIN_INFO.getString(), ChatColor.GOLD);
+        msg(ConfigEntry.SERVER_ADMIN_INFO.getString(),ChatColor.GOLD);
         return true;
     }
 }

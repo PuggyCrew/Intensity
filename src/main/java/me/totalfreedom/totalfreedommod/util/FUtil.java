@@ -910,7 +910,7 @@ public class FUtil
         {
             if (TotalFreedomMod.plugin.al.isAdmin(player))
             {
-                playerMsg(player, ChatColor.RED + "[REPORTS] " + ChatColor.GOLD + reporter.getName() + " has reported " + reported.getName() + " for " + report);
+                playerMsg(player, ChatColor.DARK_RED + "[REPORTS] " + ChatColor.RED + reporter.getName() + " has reported " + reported.getName() + " for " + report);
             }
         }
     }
