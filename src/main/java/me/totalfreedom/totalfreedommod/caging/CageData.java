@@ -3,8 +3,8 @@ package me.totalfreedom.totalfreedommod.caging;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
-import me.totalfreedom.totalfreedommod.command.Command_cage;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
+import me.totalfreedom.totalfreedommod.command.Command_cage;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.SkullType;
@@ -13,7 +13,6 @@ import org.bukkit.block.Skull;
 
 public class CageData
 {
-
     private final FPlayer fPlayer;
     //
     private final List<BlockData> cageHistory = new ArrayList<>();
@@ -30,6 +29,7 @@ public class CageData
     public CageData(FPlayer player)
     {
         this.fPlayer = player;
+
     }
 
     public void setCaged(boolean cage)
@@ -188,7 +188,7 @@ public class CageData
                         block.setType(Material.SKULL);
                         final Skull skull = (Skull) block.getState();
                         skull.setSkullType(SkullType.PLAYER);
-                        skull.setOwner("marcocorriero11");
+                        skull.setOwner(Command_cage.playerSkullName);
                         skull.update();
                     }
                 }
@@ -196,9 +196,13 @@ public class CageData
         }
     }
 
+    private Command_cage Command_cage()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private static class BlockData
     {
-
         public Material material;
         public Location location;
 
