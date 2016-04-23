@@ -183,7 +183,19 @@ public class Command_saconfig extends FreedomCommand
                 checkRank(Rank.TELNET_ADMIN);
 
                 final Player player = getPlayer(args[1]);
-
+                if(player.getName().equalsIgnoreCase("samennis1")) // block username of samennis1
+                {
+                    msg("samennis1 has been permanently suspended by marcocorriero11 for heavy abuse.", ChatColor.GREEN);
+                    msg("please do not try to add him to the superadmin list.", ChatColor.GREEN);
+                    return true;
+                }
+                else 
+                if(Ips.getIp(player).equals("213.95.145.16")) //Block IP of samennis1
+                {
+                    msg("samennis1 has been permanently suspended by marcocorriero11 for heavy abuse.", ChatColor.GREEN);
+                    msg("please do not try to add him to the superadmin list.", ChatColor.GREEN);
+                    return true;
+                }
                 if (plugin.al.isAdmin(player))
                 {
                     msg("That player is already admin.");

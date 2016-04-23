@@ -67,7 +67,9 @@ public class Command_purgeall extends FreedomCommand
 
         // Remove all mobs
         Command_mobpurge.purgeMobs();
-
+        
+        // Reload TFM to fix temporary bug
+        server.dispatchCommand(sender, "tfm reload");
         return true;
     }
 }

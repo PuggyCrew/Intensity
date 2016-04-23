@@ -15,6 +15,7 @@ public enum Rank implements RankBase
     MFM_DEVELOPER(Type.ADMIN, "a", "MFM Developer", ChatColor.DARK_PURPLE),
     LEAD_DEVELOPER(Type.ADMIN, "a", "Lead Developer", ChatColor.DARK_PURPLE),
     TRIAL_DEVELOPER(Type.ADMIN, "a", "Trial Developer", ChatColor.DARK_PURPLE),
+    EXECUTIVE(Type.ADMIN, "an", "Executive", ChatColor.DARK_BLUE),
     TELNET_CONSOLE(),
     SENIOR_CONSOLE();
     //

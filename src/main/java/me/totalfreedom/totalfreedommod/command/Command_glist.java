@@ -83,7 +83,7 @@ public class Command_glist extends FreedomCommand
 
             if (player != null)
             {
-                player.kickPlayer(ban.bakeKickMessage() + " Reason: " + reason);
+                player.kickPlayer(ban.bakeKickMessage());
             }
             return true;
         }
