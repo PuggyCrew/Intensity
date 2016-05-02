@@ -1,7 +1,10 @@
 package me.totalfreedom.totalfreedommod.command;
 
 import java.util.Date;
+import java.util.List;
 import me.totalfreedom.totalfreedommod.admin.Admin;
+import me.totalfreedom.totalfreedommod.config.ConfigEntry;
+import me.totalfreedom.totalfreedommod.config.MainConfig;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
@@ -10,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
@@ -117,7 +121,7 @@ public class Command_saconfig extends FreedomCommand
                 }
 
                 checkConsole();
-                checkRank(Rank.SENIOR_CONSOLE);
+                checkRank(Rank.SYSTEM_ADMIN);
 
                 Rank rank = Rank.findRank(args[2]);
                 if (!rank.isAtLeast(Rank.SUPER_ADMIN))
@@ -132,7 +136,15 @@ public class Command_saconfig extends FreedomCommand
                     msg("Unknown admin: " + args[1]);
                     return true;
                 }
-
+                
+                if(rank.isAtLeast(admin.getRank()) && rank != admin.getRank())
+                {
+                    FUtil.adminAction(sender.getName(), "Promoting " + admin.getName() + " to " + rank, false);
+                }
+                else if(rank != admin.getRank())
+                {
+                    FUtil.adminAction(sender.getName(), "Demoting " + admin.getName() + " to " + rank, true);
+                }
                 admin.setRank(rank);
                 plugin.al.save(admin);
 
@@ -183,19 +195,6 @@ public class Command_saconfig extends FreedomCommand
                 checkRank(Rank.TELNET_ADMIN);
 
                 final Player player = getPlayer(args[1]);
-                if(player.getName().equalsIgnoreCase("samennis1")) // block username of samennis1
-                {
-                    msg("samennis1 has been permanently suspended by marcocorriero11 for heavy abuse.", ChatColor.GREEN);
-                    msg("please do not try to add him to the superadmin list.", ChatColor.GREEN);
-                    return true;
-                }
-                else 
-                if(Ips.getIp(player).equals("213.95.145.16")) //Block IP of samennis1
-                {
-                    msg("samennis1 has been permanently suspended by marcocorriero11 for heavy abuse.", ChatColor.GREEN);
-                    msg("please do not try to add him to the superadmin list.", ChatColor.GREEN);
-                    return true;
-                }
                 if (plugin.al.isAdmin(player))
                 {
                     msg("That player is already admin.");
@@ -286,7 +285,6 @@ public class Command_saconfig extends FreedomCommand
                 plugin.al.updateTables();
                 return true;
             }
-
             default:
             {
                 return false;

@@ -76,7 +76,10 @@ public class RankManager extends FreedomService
         {
             return Title.DONATOR;
         }
-        
+        if (MainConfig.get(ConfigEntry.SERVER_SYSADMINS, List.class).contains(player.getName()))
+        {
+            return Rank.SYSTEM_ADMIN;
+        }
 
         return rank;
     }

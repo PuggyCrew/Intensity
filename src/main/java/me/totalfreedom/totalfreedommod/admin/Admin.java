@@ -37,7 +37,7 @@ public class Admin implements ConfigLoadable, ConfigSavable, Validatable
     private Date lastLogin = new Date();
     @Getter
     @Setter
-    private String loginMessage = null;
+    public static String loginMessage = null;
 
     public Admin(Player player)
     {

@@ -36,6 +36,7 @@ public enum ConfigEntry
     SERVER_OWNERS(List.class, "server.owners"),
     SERVER_COOWNERS(List.class, "server.coowners"),
     SERVER_DONATORS(List.class, "server.donators"),
+    SERVER_SYSADMINS(List.class, "server.system admins"),
     SERVER_BAN_URL(String.class, "server.ban_url"),
     SERVER_PERMBAN_URL(String.class, "server.permban_url"),
     SERVER_ADMIN_INFO(String.class, "server.admin info"),
@@ -85,6 +86,7 @@ public enum ConfigEntry
     FAMOUS_PLAYERS(List.class, "famous_players"),
     OVERLORD_IPS(List.class, "overlord_ips"),
     NOADMIN_IPS(List.class, "noadmin_ips"),
+    NOADMIN_NAMES(List.class, "noadmin_usernames"),
     ADMIN_ONLY_MODE(Boolean.class, "admin_only_mode"),
     AUTO_ENTITY_WIPE(Boolean.class, "auto_wipe");
     //

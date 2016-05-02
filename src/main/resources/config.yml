@@ -29,6 +29,10 @@ server:
   donators:
     - 
 
+  # All system admins
+  system admins:
+    - 
+    
   # URL players should appeal for bans at
   ban_url: http://totalfreedom.boards.net/
 
