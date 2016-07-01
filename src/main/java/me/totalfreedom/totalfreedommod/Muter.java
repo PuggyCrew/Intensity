@@ -51,7 +51,7 @@ public class Muter extends FreedomService
             return;
         }
 
-        FSync.playerMsg(event.getPlayer(), ChatColor.RED + "You are muted, STFU! - You will be unmuted in 5 minutes.");
+        FSync.playerMsg(event.getPlayer(), ChatColor.RED + "Someone muted your ass! - You will most likely be unmuted in 5 minutes.");
         event.setCancelled(true);
     }
 
@@ -89,7 +89,7 @@ public class Muter extends FreedomService
 
         if (MUTE_COMMANDS.contains(cmdName))
         {
-            player.sendMessage(ChatColor.RED + "That command is blocked while you are muted.");
+            player.sendMessage(ChatColor.RED + "Haha! We were one step ahead and blocked that command while you are muted!");
             event.setCancelled(true);
             return;
         }

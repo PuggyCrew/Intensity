@@ -1,9 +1,12 @@
 package me.totalfreedom.totalfreedommod;
 
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
+import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.server.ServerListPingEvent;
@@ -33,13 +36,13 @@ public class ServerPing extends FreedomService
 
         if (plugin.bm.isIpBanned(ip))
         {
-            event.setMotd(ChatColor.RED + "You are banned.");
+            event.setMotd(ChatColor.RED + "Your ip is banned from this server, blame your family members :3");
             return;
         }
 
         if (ConfigEntry.ADMIN_ONLY_MODE.getBoolean())
         {
-            event.setMotd(ChatColor.RED + "Server is closed.");
+            event.setMotd(ChatColor.RED + "Server is closed to non administrators.");
             return;
         }
 
@@ -54,8 +57,34 @@ public class ServerPing extends FreedomService
             event.setMotd(ChatColor.RED + "Server is full.");
             return;
         }
-
-        String baseMotd = ConfigEntry.SERVER_MOTD.getString().replace("%mcversion%", plugin.si.getVersion());
+        
+        /*String highestadmin = null;
+        for(final Player player : server.getOnlinePlayers())
+        {
+            Rank rank = plugin.rm.getRank(player);
+            if(rank.isAtLeast(Rank.EXECUTIVE))
+            {
+                highestadmin = player.getName();
+            }
+            else if(rank.isAtLeast(Rank.SENIOR_ADMIN))
+            {
+                highestadmin = player.getName();
+            }
+            else if(rank.isAtLeast(Rank.TELNET_ADMIN))
+            {
+                highestadmin = player.getName();
+            }
+            else if(rank.isAtLeast(Rank.SUPER_ADMIN))
+            {
+                highestadmin = player.getName();
+            }
+            else
+            {
+                highestadmin = "None!";
+            }
+        }*/
+        
+        String baseMotd = ConfigEntry.SERVER_MOTD.getString().replace("%mcversion%", plugin.si.getVersion());//.replace("%highestadmin%",highestadmin);
         baseMotd = baseMotd.replace("\\n", "\n");
         baseMotd = FUtil.colorize(baseMotd);
 

@@ -9,6 +9,7 @@ import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.util.DepreciationAggregator;
 import me.totalfreedom.totalfreedommod.util.FUtil;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -70,14 +71,14 @@ public class ItemFun extends FreedomService
                 if (!plugin.al.isSeniorAdmin(player))
                 {
                     final StringBuilder msg = new StringBuilder();
-                    final char[] chars = ("You are a clown.").toCharArray();
+                    final char[] chars = ("LEL Mafrans is a clown.").toCharArray();
+
                     for (char c : chars)
                     {
                         msg.append(FUtil.randomChatColor()).append(c);
                     }
                     player.sendMessage(msg.toString());
-
-                    player.getEquipment().getItemInMainHand().setType(Material.POTATO_ITEM);
+                    player.getEquipment().getItemInMainHand().setType(Material.POISONOUS_POTATO);
                     break;
                 }
 
@@ -105,6 +106,8 @@ public class ItemFun extends FreedomService
                             FUtil.setFlying(player, false);
                             target.setVelocity(targetPosVec.subtract(playerLocVec).normalize().multiply(STRENGTH));
                             didHit = true;
+                            player.sendMessage(ChatColor.RED + "BOINK");
+                            target.sendMessage(ChatColor.RED + "BOINK");
                         }
                     }
                     catch (IllegalArgumentException ex)

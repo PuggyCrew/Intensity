@@ -75,8 +75,7 @@ public class AutoEject extends FreedomService
                 final Calendar cal = new GregorianCalendar();
                 cal.add(Calendar.MINUTE, 5);
                 final Date expires = cal.getTime();
-
-                FUtil.bcastMsg(ChatColor.RED + player.getName() + " has been banned for 5 minutes.");
+                FUtil.bcastMsg(ChatColor.RED + player.getName() + " has been rekt for 5 minutes.");
 
                 plugin.bm.addBan(Ban.forPlayer(player, Bukkit.getConsoleSender(), expires, kickMessage));
                 player.kickPlayer(kickMessage);
@@ -88,8 +87,7 @@ public class AutoEject extends FreedomService
                 final Calendar c = new GregorianCalendar();
                 c.add(Calendar.MINUTE, 10);
                 final Date expires = c.getTime();
-
-                FUtil.bcastMsg(ChatColor.RED + player.getName() + " has been banned for 10 minutes.");
+                FUtil.bcastMsg(ChatColor.RED + player.getName() + " has been rekt for 10 minutes.");
 
                 plugin.bm.addBan(Ban.forPlayer(player, Bukkit.getConsoleSender(), expires, kickMessage));
                 player.kickPlayer(kickMessage);
@@ -98,8 +96,7 @@ public class AutoEject extends FreedomService
             case STRIKE_THREE:
             {
                 plugin.bm.addBan(Ban.forPlayerFuzzy(player, Bukkit.getConsoleSender(), null, kickMessage));
-
-                FUtil.bcastMsg(ChatColor.RED + player.getName() + " has been banned.");
+                FUtil.bcastMsg(ChatColor.RED + player.getName() + " is now banned.");
 
                 player.kickPlayer(kickMessage);
                 break;

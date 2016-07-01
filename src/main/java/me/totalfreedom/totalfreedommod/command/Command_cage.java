@@ -12,12 +12,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = Rank.SUPER_ADMIN, source = SourceType.BOTH)
+
 @CommandParameters(description = "Place a cage around someone.", usage = "/<command> <purge | off | <partialname> [custom | block] [Block name | Player name(for skull)]")
 public class Command_cage extends FreedomCommand
 {
 
     public static String playerSkullName;
-
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
@@ -62,7 +62,6 @@ public class Command_cage extends FreedomCommand
 
         if (args.length >= 2)
         {
-
             if (null != args[1])
             {
                 switch (args[1])

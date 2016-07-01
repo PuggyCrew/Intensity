@@ -5,7 +5,6 @@ import me.totalfreedom.totalfreedommod.util.FLog;
 import me.totalfreedom.totalfreedommod.util.FSync;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import static me.totalfreedom.totalfreedommod.util.FUtil.playerMsg;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -20,7 +19,6 @@ public class ChatManager extends FreedomService
     {
         super(plugin);
     }
-
     @Override
     protected void onStart()
     {
@@ -30,7 +28,7 @@ public class ChatManager extends FreedomService
     protected void onStop()
     {
     }
-
+    
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onPlayerChatFormat(AsyncPlayerChatEvent event)
     {
@@ -104,13 +102,18 @@ public class ChatManager extends FreedomService
     public void adminChat(CommandSender sender, String message)
     {
         String name = sender.getName() + " " + plugin.rm.getDisplay(sender).getColoredTag() + ChatColor.WHITE;
-        FLog.info("[ADMIN] " + name + ": " + message);
+        String prefix = null;
+        if(plugin.al.isAdmin(sender))
+        {
+            FLog.info("[ADMIN] " + name + ": " + message);
+            prefix = ChatColor.WHITE + "[" + ChatColor.AQUA + "ADMIN" + ChatColor.WHITE + "]";
+        }
 
         for (Player player : server.getOnlinePlayers())
         {
             if (plugin.al.isAdmin(player))
             {
-                player.sendMessage("[" + ChatColor.AQUA + "ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + FUtil.colorize(adminchatcolor) + message);
+                player.sendMessage(prefix + " " + ChatColor.DARK_RED + name + ": " + FUtil.colorize(adminchatcolor) + message);
             }
         }
     }

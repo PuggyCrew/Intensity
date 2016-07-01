@@ -45,17 +45,7 @@ public class Command_bananahammer extends FreedomCommand
             FPlayer playerdata = plugin.pl.getPlayer(player);
             FUtil.adminAction(sender.getName(), ChatColor.MAGIC + "Bananahammering " + ChatColor.RED + player.getName(), true);
             FUtil.bcastMsg("Oh...",ChatColor.RED);
-            int i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("You just made a mistake...",ChatColor.RED);
-            i = 20;
-            while(i>0)
-            {
-                i -= 1;
-            }
             player.setOp(false);
             playerdata.getCageData().setCaged(false);
             Location playerLoc = player.getLocation().clone().add(0, 1, 0);
@@ -66,23 +56,8 @@ public class Command_bananahammer extends FreedomCommand
                 players.teleport(playerLoc.add(0, 5, 0));
             }
             FUtil.bcastMsg("Just look how miserable you are...", ChatColor.RED);
-            i = 100;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("Ok, lets stop messing around...", ChatColor.RED);
-            i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("LETS HAVE SOME FUN!", ChatColor.RED);
-            i = 5;
-            while(i>0)
-            {
-                i -= 1;
-            }
             player.setGameMode(GameMode.CREATIVE);
             player.getWorld().createExplosion(targetPos, 0.0f, false);
             player.getWorld().createExplosion(targetPos, 0.0f, false);
@@ -125,17 +100,7 @@ public class Command_bananahammer extends FreedomCommand
             player.getWorld().createExplosion(targetPos, 0.0f, false);
             player.setGameMode(GameMode.SURVIVAL);
             FUtil.bcastMsg("Huh, youre not dying...", ChatColor.RED);
-            i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("That was... anticlimactic...", ChatColor.RED);
-            i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("LETS SEE HOW YOU TAKE THIS!", ChatColor.RED);
             player.setGameMode(GameMode.CREATIVE);
             player.getWorld().strikeLightning(targetPos);
@@ -166,17 +131,7 @@ public class Command_bananahammer extends FreedomCommand
             player.getWorld().strikeLightning(targetPos);
             player.setGameMode(GameMode.SURVIVAL);
             FUtil.bcastMsg("Huh, youre still not dead...", ChatColor.RED);
-            i = 50;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("LETS DO BOTH!", ChatColor.RED);
-            i = 20;
-            while(i>0)
-            {
-                i -= 1;
-            }
             player.setGameMode(GameMode.CREATIVE);
             player.getWorld().createExplosion(targetPos, 0.0f, false);
             player.getWorld().strikeLightning(targetPos);
@@ -230,33 +185,9 @@ public class Command_bananahammer extends FreedomCommand
             player.getWorld().createExplosion(targetPos, 0.0f, false);
             player.getWorld().strikeLightning(targetPos);
             player.setHealth(0.0);
-            i = 5;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("KAPOW!", ChatColor.RED);
-            i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("HOW DO YOU LIKE THAT, BITCH!", ChatColor.RED);
-            i = 10;
-            while(i>0)
-            {
-                i -= 1;
-            }
             FUtil.bcastMsg("ENOUGH OF THIS ALREADY, ILL FINISH YOU ONCE AND FOR ALL!", ChatColor.RED);
-            i = 20;
-            while(i>0)
-            {
-                i -= 1;
-            }
-            while(player.getHealth() < 1)
-            {                
-            }
-            FUtil.bcastMsg("IMMA FIRIN MAH LAZOR!", ChatColor.RED);
             FUtil.bcastMsg("KAPOW!", ChatColor.RED);
             player.getWorld().createExplosion(targetPos, 0.0f, false);
             FUtil.bcastMsg("WAZAM!", ChatColor.YELLOW);

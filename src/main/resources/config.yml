@@ -27,6 +27,7 @@ server:
   # URL players should appeal for permanent bans at
   permban_url: http://bit.ly/TF_PermBan
 
+
 # Admin options //Deprecated, currently does absolutely nothing
 admin:
   adminchat_color: '&6'

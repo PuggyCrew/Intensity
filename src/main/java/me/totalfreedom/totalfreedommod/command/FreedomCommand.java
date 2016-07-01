@@ -18,10 +18,10 @@ import org.bukkit.entity.Player;
 public abstract class FreedomCommand extends AbstractCommandBase<TotalFreedomMod>
 {
 
-    public static final String YOU_ARE_OP = ChatColor.YELLOW + "You are now op!";
-    public static final String YOU_ARE_NOT_OP = ChatColor.YELLOW + "You are no longer op!";
-    public static final String NOT_FROM_CONSOLE = "This command may not be used from the console.";
-    public static final String PLAYER_NOT_FOUND = ChatColor.GRAY + "Player not found!";
+    public static final String YOU_ARE_OP = ChatColor.YELLOW + "Yay, You are now op (~o.o)~";
+    public static final String YOU_ARE_NOT_OP = ChatColor.YELLOW + "You are no longer op! (/>.<)/ ^ _|___|_";
+    public static final String NOT_FROM_CONSOLE = "This command may not be used from the console. (T.T)";
+    public static final String PLAYER_NOT_FOUND = ChatColor.GRAY + "Player not found! \\(O.o)/";
     //
     @Getter
     private final CommandParameters params;
@@ -61,7 +61,7 @@ public abstract class FreedomCommand extends AbstractCommandBase<TotalFreedomMod
         {
             FLog.severe("Uncaught exception executing command: " + command.getName());
             FLog.severe(ex);
-            sender.sendMessage(ChatColor.RED + "Command error: " + (ex.getMessage() == null ? "Unknown cause" : ex.getMessage()));
+            sender.sendMessage(ChatColor.RED + "Lel, something fucked up, " + (ex.getMessage() == null ? "Now marco will come spamming me to fix it" : ex.getMessage()));
             return true;
         }
     }
@@ -88,7 +88,7 @@ public abstract class FreedomCommand extends AbstractCommandBase<TotalFreedomMod
     {
         if (isConsole() && FUtil.isFromHostConsole(sender.getName()))
         {
-            throw new CommandFailException("This command can not be used from the host console.");
+            throw new CommandFailException("For some reason this command can not be used from the host console, dont ask me why.");
         }
     }
 
@@ -131,7 +131,7 @@ public abstract class FreedomCommand extends AbstractCommandBase<TotalFreedomMod
 
     protected void msg(final CommandSender sender, final String message)
     {
-        msg(sender, message, ChatColor.GRAY);
+        msg(sender, message, ChatColor.GREEN);
     }
 
     protected void msg(final String message)

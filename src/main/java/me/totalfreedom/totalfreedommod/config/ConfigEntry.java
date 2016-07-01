@@ -5,8 +5,7 @@ import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 
 public enum ConfigEntry
 {
-    ADMIN_ADMINCHATCOLOR(String.class, "admin.adminchat_color"),
-    //
+
     FORCE_IP_ENABLED(Boolean.class, "forceip.enabled"),
     FORCE_IP_PORT(Integer.class, "forceip.port"),
     FORCE_IP_KICKMSG(String.class, "forceip.kickmsg"),

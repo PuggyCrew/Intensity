@@ -16,8 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 @CommandParameters(description = "For the people that are still alive.", usage = "/<command>")
 public class Command_cake extends FreedomCommand
 {
-
-    public static final String CAKE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of cake.";
+    public static String CAKE_LYRICS = "But there's no sense crying over every mistake. You just keep on trying till you run out of cake.";
     private final Random random = new Random();
 
     @Override
@@ -25,10 +24,10 @@ public class Command_cake extends FreedomCommand
     {
         final StringBuilder output = new StringBuilder();
 
-        final String[] words = CAKE_LYRICS.split(" ");
+        final String[] words = CAKE_LYRICS.split("");
         for (final String word : words)
         {
-            output.append(ChatColor.COLOR_CHAR).append(Integer.toHexString(1 + random.nextInt(14))).append(word).append(" ");
+            output.append(ChatColor.COLOR_CHAR).append(Integer.toHexString(1 + random.nextInt(14))).append(word);
         }
 
         final ItemStack heldItem = new ItemStack(Material.CAKE);

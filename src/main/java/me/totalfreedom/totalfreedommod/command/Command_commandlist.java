@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import me.totalfreedom.totalfreedommod.rank.Rank;
+import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -45,8 +46,8 @@ public class Command_commandlist extends FreedomCommand
         }
 
         Collections.sort(commands);
-
-        sender.sendMessage(StringUtils.join(commands, ","));
+        sender.sendMessage("Displaying all commands currently on the server:");
+        sender.sendMessage(FUtil.colorize(StringUtils.join("&a" + commands, "&e, ")));
 
         return true;
     }

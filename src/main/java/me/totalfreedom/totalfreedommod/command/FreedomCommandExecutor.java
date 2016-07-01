@@ -62,8 +62,8 @@ public class FreedomCommandExecutor<C extends AeroCommandBase<?>> extends Abstra
         {
             if (perms.level().isConsole())
             {
-                FLog.warning("[Command] " + pluginCommand.getName() + " - permission is set to a console rank, "
-                        + "should be set to player variant with 'source = SourceType.ONLY_CONSOLE'");
+                FLog.warning("[Command] " + pluginCommand.getName() + " - WHOA! Why did you set the permission to a console rank?! "
+                        + " It should be set to player variant with 'source = SourceType.ONLY_CONSOLE'");
             }
         }
     }
@@ -85,7 +85,7 @@ public class FreedomCommandExecutor<C extends AeroCommandBase<?>> extends Abstra
             // If this is ever ran, TFM failed :
             FLog.severe("Unhandled command exception: " + command.getName());
             FLog.severe(ex);
-            sender.sendMessage(ChatColor.RED + "Unhandled Command Error: " + command.getName());
+            sender.sendMessage(ChatColor.RED + "Ouchies, TFM got rekt. Tell Mafrans to check: " + command.getName());
             return true;
         }
     }

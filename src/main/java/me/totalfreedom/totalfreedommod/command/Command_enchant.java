@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Enchant items.", usage = "/<command> <list | addall | reset | add <name> | remove <name>>")
+@CommandParameters(description = "Enchant items.", usage = "/<command> <list | addall <value> | reset | add <name> <value> | remove <name>>")
 public class Command_enchant extends FreedomCommand
 {
 
@@ -58,9 +58,13 @@ public class Command_enchant extends FreedomCommand
             {
                 try
                 {
-                    if (ench.canEnchantItem(item))
+                    if(args[3].equalsIgnoreCase("false") && ench.canEnchantItem(item))
                     {
                         item.addEnchantment(ench, ench.getMaxLevel());
+                    }
+                    if(args[3].equalsIgnoreCase("true"))
+                    {
+                        item.addEnchantment(ench, Integer.parseInt(args[2]));
                     }
                 }
                 catch (Exception ex)
@@ -105,16 +109,14 @@ public class Command_enchant extends FreedomCommand
 
             if (args[0].equalsIgnoreCase("add"))
             {
-                if (ench.canEnchantItem(item))
-                {
-                    item.addEnchantment(ench, ench.getMaxLevel());
+                    if(args.length < 3)
+                    {
+                        return false;
+                    }
+                        
+                    item.addEnchantment(ench, Integer.parseInt(args[2]));
 
                     msg("Added enchantment: " + ench.getName());
-                }
-                else
-                {
-                    msg("Can't use this enchantment on held item.");
-                }
             }
             else if (args[0].equals("remove"))
             {

@@ -50,7 +50,7 @@ public class BlockBlocker extends FreedomService
                 else
                 {
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
-                    player.sendMessage(ChatColor.GRAY + "Lava placement is currently disabled.");
+                    player.sendMessage(ChatColor.GRAY + "Lava placement is currently a no no, maybe later.");
 
                     event.setCancelled(true);
                 }
@@ -68,7 +68,7 @@ public class BlockBlocker extends FreedomService
                 else
                 {
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
-                    player.sendMessage(ChatColor.GRAY + "Water placement is currently disabled.");
+                    player.sendMessage(ChatColor.GRAY + "Water placement is currently a no no, check later.");
 
                     event.setCancelled(true);
                 }
@@ -85,7 +85,7 @@ public class BlockBlocker extends FreedomService
                 else
                 {
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
-                    player.sendMessage(ChatColor.GRAY + "Fire placement is currently disabled.");
+                    player.sendMessage(ChatColor.GRAY + "Fire placement is currently disabled to ensure maniacs dont come burn the server down.");
 
                     event.setCancelled(true);
                 }
@@ -103,7 +103,7 @@ public class BlockBlocker extends FreedomService
                 {
                     player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.COOKIE, 1));
 
-                    player.sendMessage(ChatColor.GRAY + "TNT is currently disabled.");
+                    player.sendMessage(ChatColor.GRAY + "Cool guys don't look at explosions.");
                     event.setCancelled(true);
                 }
                 break;

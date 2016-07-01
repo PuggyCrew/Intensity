@@ -29,7 +29,6 @@ public class CageData
     public CageData(FPlayer player)
     {
         this.fPlayer = player;
-
     }
 
     public void setCaged(boolean cage)
