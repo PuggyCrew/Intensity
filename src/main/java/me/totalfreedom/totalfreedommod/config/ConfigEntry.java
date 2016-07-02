@@ -37,6 +37,7 @@ public enum ConfigEntry
     SERVER_OWNERS(List.class, "server.owners"),
     SERVER_BAN_URL(String.class, "server.ban_url"),
     SERVER_PERMBAN_URL(String.class, "server.permban_url"),
+    SERVER_ADMIN_INFO(String.class, "server.admin_info"),
     //
     ADMINLIST_CLEAN_THESHOLD_HOURS(Integer.class, "adminlist.clean_threshold_hours"),
     ADMINLIST_CONSOLE_IS_EXEC(Boolean.class, "adminlist.console_is_executive"),

@@ -26,6 +26,9 @@ server:
 
   # URL players should appeal for permanent bans at
   permban_url: http://bit.ly/TF_PermBan
+  
+  # Admin info message, line split by "|"
+  admin_info: Apply for &bSuper Admin &aat our forum:|&a - &chttp://totalfreedom.boards.net/|&aRemember to read the template!
 
 
 # Admin options //Deprecated, currently does absolutely nothing

@@ -19,7 +19,7 @@
         <maven.build.timestamp.format>dd/MM/yyyy hh:mm aa</maven.build.timestamp.format>
     </properties>
 
-    <name>MarcoFreedomMod-Electrum</name>
+    <name>MarcoFreedomMod-1.10</name>
     <description>Server modification for the TotalFreedom server</description>
     <url>https://github.com/TotalFreedom/TotalFreedomMod</url>
 
@@ -58,14 +58,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.9-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Spigot-1.9.jar</systemPath>
-        </dependency>
-
-        <dependency>
             <groupId>net.pravian</groupId>
             <artifactId>aero</artifactId>
             <version>2.0</version>
@@ -95,6 +87,12 @@
             <version>2.0-TF</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/TF-Essentials-2.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.10</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
