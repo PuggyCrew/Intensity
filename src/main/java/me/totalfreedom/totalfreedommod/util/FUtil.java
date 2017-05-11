@@ -38,8 +38,7 @@ public class FUtil
     // WARNING, DO NOT IN ANY WAY EDIT THIS LIST OR YOU MAY GET PERMANENTLY BANNED ON BOTH MARCOFREEDOM AND TOTALFREEDOM. See https://github.com/TotalFreedom/License.
     public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "Prozza", "Wild1145", "WickedGamingUK");
     
-    // This list may only be edited by Mafrans
-    public static final List<String> MFDEVELOPERS = Arrays.asList("Mafrans");
+    public static final List<String> INTENSITYDEVELOPERS = Arrays.asList("Mafrans", "PuggyCrew", "PezTez", "rovertpug", "adroition");
     
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
     public static final Map<String, ChatColor> CHAT_COLOR_NAMES = new HashMap<>();
