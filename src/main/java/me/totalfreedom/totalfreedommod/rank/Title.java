@@ -7,6 +7,7 @@ public enum Title implements Displayable
 {
 
     DEVELOPER("a", "Developer", ChatColor.DARK_PURPLE, "TF-Dev"),
+    MFDEVELOPER("a", "Developer", ChatColor.DARK_PURPLE, "MF-Dev"),
     INTENSITYDEV("a", "Intensity Developer", ChatColor.DARK_PURPLE, "Dev"),
     OWNER("the", "Owner", ChatColor.BLUE, "Owner");
 
