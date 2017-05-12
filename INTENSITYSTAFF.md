@@ -5,5 +5,5 @@ The owner of Intensity is PezTez, which is managed by Develop-Team whom PezTez i
 ## Roster ##
 PezTez - Owner and Lead Developer
 rovertdude - Manager
-PuggyCrew - N/A
-adroition - N/A
+PuggyCrew - Developer
+adroition - Co-Lead Developer
